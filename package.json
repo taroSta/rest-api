@@ -19,7 +19,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "console.log('hello world!!!!')"
+    "testLog": "console.log('hello world!!!!')",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "better-sqlite3": "^13.2.0",
