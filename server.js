@@ -3,7 +3,7 @@
   const port = 3000;
   const database = require('./database.js')
   const db = new database('./messages.db')
-  db.sampleData()
+  //db.sampleData()
   
   // Mit diesem Kommando starten wir den Webserver.
   app.listen(port, () => {
@@ -22,7 +22,21 @@
     data.messages = items
     res.json(data)
   })
-
+  app.get('/api/message/:id', (req, res, next) => {
+    const id = req.params.id;
+    console.log(id);
+    const item = db.getMessage(id);
+    const data = {};
+    data.message = item;
+    res.json(data);
+  });
+  app.post('/api/add', (req, res, next) => {
+    const name = req.body.name;
+    const message = req.body.message;
+    db.addMessage(name, message);
+    res.json({"value": "added!"});
+  });
+  
   // Default response for any other request
   app.use(function(req, res){
     res.status(404);

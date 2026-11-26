@@ -32,6 +32,12 @@ module.exports = function (file) {
   this.sampleQuery = function (id) {
     return this.db.prepare("SELECT * FROM message WHERE id = ? ORDER BY ID;").get(id)
   }
+  this.addMessage = function (name, message) {
+    this.db.prepare('INSERT INTO message (name, message) VALUES (@name, @message)').run({ name: name, message: message })
+  }
+  this.getMessage = function (id) {
+    return this.db.prepare("SELECT * FROM message WHERE id = ? ORDER BY ID;").get(id);
+  }
 
   this.close = function () {
     this.db.close((error) => {
