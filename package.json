@@ -1,0 +1,24 @@
+{
+  "name": "rest-api-chat-app",
+  "version": "1.0.0",
+  "description": "chat app backend using node.js to provide a rest api",
+  "keywords": [
+    "api",
+    "backend",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/taroSta/rest-api#readme",
+  "bugs": {
+    "url": "https://github.com/taroSta/rest-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taroSta/rest-api.git"
+  },
+  "author": "Taro Stauffer",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('hello world!!!!')"
+  }
+}
